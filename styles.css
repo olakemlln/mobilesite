@@ -1,0 +1,790 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Blogger Sans', sans-serif;
+}
+
+body {
+    padding-top: 60px;
+    background-color: #f9f9f9;
+}
+
+/* Шапка сайта */
+.header {
+    background-color: #ffffff;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eaeaea;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Поисковая строка */
+.search {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #eeeeee;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.search-input::placeholder {
+    color: #666;
+    opacity: 1;
+}
+
+.search-input:focus {
+    outline: none;
+    background-color: #e6e6e6;
+}
+
+/* Бургер-меню */
+.burger-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.burger-lines {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.burger-lines::before,
+.burger-lines::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    left: 0;
+    transition: all 0.3s;
+}
+
+.burger-lines::before {
+    top: -8px;
+}
+
+.burger-lines::after {
+    bottom: -8px;
+}
+
+/* Активное состояние бургера */
+.burger-menu.active .burger-lines {
+    background-color: transparent;
+}
+
+.burger-menu.active .burger-lines::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.burger-menu.active .burger-lines::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+/* Мобильное меню */
+.mobile-nav {
+    position: fixed;
+    top: 56.5px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.mobile-nav.active {
+    display: flex;
+}
+
+.mobile-nav a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+}
+
+.mobile-nav a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Основное содержимое */
+.main-content {
+    padding: 0% 1%;
+    margin-top: 0px;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    
+    position: relative;
+  }
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  
+
+/* Основной контейнер блока "Рекомендуем" */
+.recommended {
+    /* Внутренние отступы сверху/снизу 20px, слева/справа 15px */
+    padding: 0% 0px;
+    position: relative;
+    
+    /* Фон блока - прозрачный (будет виден фон body) */
+    background: white;
+}
+
+/* Заголовок блока */
+.section-title h1{
+    font-size: 22px;
+    color: #363636;
+    margin-bottom: 0px;
+    padding-bottom: 8px;
+    
+}
+
+/* Контейнер сетки карточек */
+.services-grid {
+    /* Делаем контейнер grid-контейнером */
+    display: grid;
+    
+    /* 2 колонки с равной шириной (1fr - фракция) */
+    grid-template-columns: repeat(2, 1fr);
+    
+    /* Расстояние между карточками 15px */
+    gap: 10px;
+}
+
+/* Стили отдельной карточки услуги */
+.service-card {
+
+    will-change: transform, box-shadow;
+    text-decoration: none;
+    display: block; /* Для тега <a> */
+
+    /* Белый фон карточки */
+    background: #ffffff;
+    
+    /* Закругление углов 8px */
+    border-radius: 8px;
+    
+    /* Скрываем содержимое, выходящее за границы */
+    overflow: hidden;
+    
+    /* Тень карточки: смещение по X, Y, размытие, цвет */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.08);
+    
+    /* Плавные анимации всех свойств за 0.3 секунды */
+    transition: all 0.3s ease;
+    
+    /* Относительное позиционирование (для внутренних элементов) */
+    position: relative;
+}
+
+/* Контейнер для изображения услуги */
+.card-image {
+    /* Фиксированная высота 120px */
+    height: 220px;
+    
+    /* Скрываем части изображения, выходящие за границы */
+    overflow: hidden;
+    
+    /* Относительное позиционирование */
+    position: relative;
+}
+
+/* Стили для изображения внутри карточки */
+.card-image img {
+    /* Ширина 100% от родителя */
+    width: 100%;
+    
+    /* Высота 100% от родителя */
+    height: 100%;
+    
+    max-width: 220px;
+
+    /* Обрезка и масштабирование изображения с сохранением пропорций */
+    object-fit: cover;
+    
+    /* Плавное изменение трансформации за 0.3 секунды */
+    transition: transform 0.8s ease;
+}
+
+/* Заголовок карточки */
+.card-title {   
+    /* Внутренние отступы: 12px сверху/снизу, 8px слева/справа */
+    padding: 9px 6px 3px;
+    /* Выравнивание текста по центру */
+    text-align: left;
+    
+    /* Размер шрифта 15px */
+    font-size: 17px;
+    
+    /* Цвет текста - темно-серый */
+    color: #000000;
+    
+    /* Убираем внешние отступы */
+    margin: 0;
+    
+    /* Полужирное начертание (500 - medium) */
+    font-weight: 500;
+}
+
+@keyframes cardClick {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.96); }
+    100% { transform: scale(1); }
+}
+
+/* Эффект нажатия (для мобильных и кликов) */
+.service-card:active {
+    animation: cardClick 0.3s ease;
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 70%, rgba(0,0,0,0.2) 100%);
+    z-index: 1;
+}
+
+
+/* Адаптация для планшетов (ширина от 600px) */
+@media (min-width: 600px) {
+    .services-grid {
+        /* Увеличиваем расстояние между карточками */
+        gap: 20px;
+    }
+    
+    .card-image {
+        /* Увеличиваем высоту изображения */
+        height: 150px;
+    }
+    
+    .card-title {
+        /* Увеличиваем размер шрифта */
+        font-size: 16px;
+        
+        /* Увеличиваем отступы */
+        padding: 15px;
+    }
+}
+
+/* Адаптация для десктопов (ширина от 900px) */
+@media (min-width: 900px) {
+    .recommended {
+        /* Увеличиваем отступы */
+        padding: 30px 20px;
+        
+        /* Ограничиваем максимальную ширину */
+        max-width: 1200px;
+        
+        /* Центрируем блок */
+        margin: 0 auto;
+    }
+    
+    .services-grid {
+        /* 4 колонки на десктопах */
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .card-image {
+        /* Увеличиваем высоту изображения */
+        height: 180px;
+    }
+}
+
+/* Эффекты при наведении (только для устройств с курсором) */
+@media (hover: hover) {
+    .service-card:hover {
+        /* Приподнимаем карточку на 5px */
+        transform: translateY(-5px);
+        
+        /* Усиливаем тень */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+    
+    .service-card:hover .card-image img {
+        /* Увеличиваем изображение на 5% */
+        transform: scale(1.05);
+    }
+}
+
+
+/* Основные стили футера */
+.footer {
+    background: #f5f5f5;
+    color: #333;
+    font-family: 'Blogger Sans', sans-serif;
+    margin-top: 10px;
+    padding: 10px 0 0;
+    border-top: 1px solid #000000;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-column {
+    margin-bottom: 5px;
+}
+
+.footer-title {
+    font-size: 18px;
+    margin-top: 5px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.footer-text {
+    margin: 10px 0;
+    font-size: 15px;
+    color: #555;
+}
+
+.footer-button {
+    display: block;
+    padding: 12px 0 6px;
+    color: #000000;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.8s;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+
+
+/* Специальные стили для ссылок */
+.phone-link {
+    color: #27ae60 !important;
+}
+
+.vk-link {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+}
+
+.vk-icon {
+    fill: #4a76a8;
+    width: 30px;
+    height: 30px;
+    animation: vk-blink-intense 2s infinite;
+}
+
+@keyframes vk-blink-intense {
+    0% { opacity: 1; transform: scale(1); }
+    25% { opacity: 0.5; transform: scale(0.95); }
+    50% { opacity: 0.8; transform: scale(1.1); }
+    75% { opacity: 0.6; transform: scale(0.98); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+/* Баннеры */
+.footer-banners {
+    margin-top: 0px;
+    padding: 0 20px;
+}
+
+.footer-banner {
+    width: 100%;
+    max-width: 430px;
+    display: block;
+    margin: auto
+}
+
+/* Копирайт */
+.footer-copyright {
+    background:  #f5f5f5;
+    color: #000000;
+    padding: 5px ;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-copyright p {
+    margin: 5px 0;
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+    padding: 15px 0;
+    background-color: #eeeeee;
+    font-size: 14px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.breadcrumbs .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.breadcrumbs a {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs span {
+    color: #7f8c8d;
+}
+
+/* Страница "О нас" */
+.about-page {
+    padding: 0px 0;
+}
+
+.about-page .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 10px;
+    
+}
+
+
+.about-section {
+    margin-bottom: 15px;
+    border-radius: 8px;
+
+    background-color: #eeeeee;
+}
+
+.about-page h1{
+    font-size: 22px;
+    color: #363636;
+    margin-bottom: 0px;
+    padding-bottom: 8px;
+}
+
+.about-section p {
+    font-size: 17px;
+    line-height: 1.5;
+    color: #2c3e50;
+    padding: 0 10px;
+
+}
+
+
+
+
+/* Страница "Правила и условия" */
+.terms-page {
+    padding: 0px 10px;
+    line-height: 1.6;
+}
+
+.terms-page h1 {
+    font-size: 22px;
+    color: #363636;
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+}
+
+.disclaimer {
+    padding-bottom: 8px;
+}
+
+.disclaimer p {
+    font-size: 17px;
+    padding: 0 0px;
+    color: #2c3e50;
+}
+
+/* Аккордеон */
+.accordion {
+    margin-bottom: 0px;
+}
+
+.accordion-item {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 18px 10px;
+    background: #eeeeee;
+    color: #363636;
+    border: none;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+
+.accordion-header i {
+    transition: transform 0.3s;
+}
+
+.accordion-header.active {
+    background: #eeeeee;
+}
+
+.accordion-header.active i {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: #eeeeee;
+}
+
+.accordion-content-inner {
+    padding: 20px 25px;
+}
+
+.accordion-content p {
+    margin-bottom: 15px;
+    font-size: 17px;
+    color: #2c3e50;
+}
+
+.accordion-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+
+/* Страница "Политика конфиденциальности" */
+.privacy-page {
+    padding: 0px 10px;
+    line-height: 1.6;
+}
+
+.privacy-page h1 {
+    font-size: 22px;
+    color: #363636;
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+}
+
+
+
+
+/* Контакты */
+.contacts-page {
+    padding: 0px 10px;
+}
+
+.contacts-page h1{
+    font-size: 22px;
+    color: #363636;
+    margin-bottom: 0px;
+    padding-bottom: 8px;
+}
+
+.contacts-section {
+    background-color: #eeeeee;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.contacts-section p {
+    font-size: 17px;
+    line-height: 1.5;
+    color: #2c3e50;
+    padding: 0 10px;
+}
+
+/* Стили для карты */
+.map-container {
+    width: 100%;
+    height: 300px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+
+
+.feedback-form {
+    background-color: #eeeeee;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.feedback-form h3 {
+    color: #000000;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #E2AF3A;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+
+/* Плейсхолдеры для полей ввода */
+input::placeholder,
+textarea::placeholder {
+    color: #999;
+}
+
+/* Стиль для полей ввода при фокусе */
+input:focus::placeholder,
+textarea:focus::placeholder {
+    color: transparent;
+}
+
+.login-page {
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Кнопка "Наверх" */
+.scroll-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #E2AF3A;
+    color: black;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.scroll-to-top.visible {
+    opacity: 0.5;
+    visibility: visible;
+}
+
+.scroll-to-top i {
+    font-size: 20px;
+    transition: transform 0.3s;
+    font-weight: 600;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    overscroll-behavior-y: none;
+}
+
+/* * { outline: 1px solid red; } */
+

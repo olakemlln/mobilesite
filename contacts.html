@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Услуги ГрГУ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/blogger-sans" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="search">
+            <input type="text" class="search-input" placeholder="Найти на Услуги ГрГУ">
+        </div>
+        <button class="burger-menu" id="burgerBtn" aria-label="Меню">
+            <span class="burger-lines"></span>
+        </button>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="#">Главная</a>
+        <a href="#">Услуги</a>
+        <a href="#">Контакты</a>
+        <a href="#">Вход</a>
+    </nav>
+
+    <!-- Хлебные крошки -->
+    <nav class="breadcrumbs">
+        <div class="container">
+            <a href="/">Главная</a>
+            <span> / </span>
+            <span>Контакты</span>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="contacts-page">
+        <div class="container">
+            <h1>Контакты</h1>
+
+            <section class="contacts-section">
+                <p>🏫 Услуги ГрГУ</p>
+                <p>230023, Республика Беларусь, г. Гродно, ул. Ожешко, 22, каб. 111</p>
+            </section>
+
+            <section class="contacts-section">
+                <p>📞 Телефон</p>
+                <p>+375 (152) 682 111</p>
+            </section>
+
+            <section class="contacts-section">
+                <p>🕓 Режим работы</p>
+                <p>пн-пт 8:30 – 17:00</p>
+                <p>обед 12:30 – 13:00</p>
+            </section>
+            
+            <section class="contacts-section">
+                <p>Дополнительная информация:</p>
+                <p>🏦 Банковские реквизиты: Учреждение образования "Гродненский государственный университет имени Янки Купалы" Адрес: 230023, Республика Беларусь, г. Гродно, ул. Ожешко, 22 тел. +375 (152) 73 19 00, факс +375 (152) 73 19 10 ф-л 400 ГОУ ОАО «АСБ Беларусбанк» г. Гродно, BIC SWIFT: AKBB BY 2Х Р/с BY37 AKBB 3632 9000 0402 1400 0000 УНН 500037559</p>
+            </section>
+
+            <section class="contacts-section">
+                <p>📍 Наше местоположение</p>
+                <div id="yandex-map" class="map-container"></div>
+            </section>
+            
+            <div class="feedback-form">
+                <h3>Написать нам</h3>
+                <form id="contactForm">
+                    <label>Ваше имя</label>
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Ваше имя" required minlength="2" maxlength="32">
+                    </div>
+                    <label>Ваш E-mail</label>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Ваш E-mail" required>
+                    </div>
+                    <label>Ваш вопрос или сообщение</label>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Ваш вопрос или сообщение" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Отправить</button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Первая колонка -->
+            <div class="footer-column">
+                <div class="footer-section">
+                    <h3 class="footer-title">Информация</h3>
+                    <a href="about.html" class="footer-button">О нас</a>
+                    <a href="terms.html" class="footer-button">Правила и условия</a>
+                    <a href="privacy.html" class="footer-button">Политика конфиденциальности</a>
+                </div>
+            </div>
+    
+            <!-- Вторая колонка -->
+            <div class="footer-column">
+                <div class="footer-section">
+                    <h3 class="footer-title">Служба поддержки</h3>
+                    <a href="contacts.html" class="footer-button">Контакты</a>
+                    <a href="tel:+375152682111" class="footer-button phone-link">
+                        Позвонить нам - +375 (152) 682 111
+                    </a>
+                    <a href="https://vk.com/grodno_uslugi" target="_blank" class="footer-button vk-link">
+                        Написать нам в ВКонтакте
+                        <svg class="vk-icon" width="20" height="20" viewBox="0 0 48 48">
+                            <path d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5 V37z"></path><path fill="#fff" d="M35.937,18.041c0.046-0.151,0.068-0.291,0.062-0.416C35.984,17.263,35.735,17,35.149,17h-2.618 c-0.661,0-0.966,0.4-1.144,0.801c0,0-1.632,3.359-3.513,5.574c-0.61,0.641-0.92,0.625-1.25,0.625C26.447,24,26,23.786,26,23.199 v-5.185C26,17.32,25.827,17,25.268,17h-4.649C20.212,17,20,17.32,20,17.641c0,0.667,0.898,0.827,1,2.696v3.623 C21,24.84,20.847,25,20.517,25c-0.89,0-2.642-3-3.815-6.932C16.448,17.294,16.194,17,15.533,17h-2.643 C12.127,17,12,17.374,12,17.774c0,0.721,0.6,4.619,3.875,9.101C18.25,30.125,21.379,32,24.149,32c1.678,0,1.85-0.427,1.85-1.094 v-2.972C26,27.133,26.183,27,26.717,27c0.381,0,1.158,0.25,2.658,2c1.73,2.018,2.044,3,3.036,3h2.618 c0.608,0,0.957-0.255,0.971-0.75c0.003-0.126-0.015-0.267-0.056-0.424c-0.194-0.576-1.084-1.984-2.194-3.326 c-0.615-0.743-1.222-1.479-1.501-1.879C32.062,25.36,31.991,25.176,32,25c0.009-0.185,0.105-0.361,0.249-0.607 C32.223,24.393,35.607,19.642,35.937,18.041z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Третья колонка -->
+            <div class="footer-column">
+                <div class="footer-section">
+                    <h3 class="footer-title">Личный кабинет</h3>
+                    <a href="login.html" class="footer-button">Личный кабинет</a>
+                    <a href="/favorites" class="footer-button">Избранное</a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Баннеры -->
+        <div class="footer-banners">
+            <img src="images/banner1.png" alt="Баннер 1" class="footer-banner">
+        </div>
+    
+        <!-- Копирайт -->
+        <div class="footer-copyright">
+            <p>© 2017-2025 Учреждение образования «Гродненский государственный университет имени Янки Купалы»</p>
+            <p>Дизайн и разработка сайта - ИАЦ, ОМиР ЦСО</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_API_ключ&lang=ru_RU"></script>
+    <button class="scroll-to-top" aria-label="Наверх">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</body>
+</html>
